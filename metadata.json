@@ -1,0 +1,8 @@
+{
+  "name": "JC Haus & Hof Service",
+  "description": "Property management and professional cleaning service website, supporting German and English",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
