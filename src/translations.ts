@@ -61,6 +61,8 @@ export interface TranslationSet {
   qr_scan_prompt: string;
   copyright: string;
   legal_notice: string;
+  tax_number_label: string;
+  commercial_register_label: string;
 }
 
 export const translations: Record<'DE' | 'EN', TranslationSet> = {
@@ -69,7 +71,7 @@ export const translations: Record<'DE' | 'EN', TranslationSet> = {
     nav_about: "Über uns",
     nav_contact: "Kontakt",
     
-    hero_title: "Ihr zuverlässiger Partner für Haus & Hof",
+    hero_title: "Ihr zuverlässiger Partner für Haus & Hof Service",
     hero_subtitle: "Professionelle Gebäudereinigung & Grundstückspflege aus Adendorf. Gründlich, flexibel und nah am Kunden.",
     hero_location: "Aus Adendorf",
     hero_cta_call: "JETZT ANRUFEN",
@@ -126,14 +128,16 @@ export const translations: Record<'DE' | 'EN', TranslationSet> = {
     qr_label: "Digitale Visitenkarte",
     qr_scan_prompt: "QR-Code scannen für die schnelle Kontaktspeicherung auf Ihrem Smartphone",
     copyright: "© 2026 JC HAUS & HOF SERVICE. Alle Rechte vorbehalten.",
-    legal_notice: "Impressum & Datenschutz"
+    legal_notice: "Impressum & Datenschutz",
+    tax_number_label: "Steuernummer",
+    commercial_register_label: "Handelsregister"
   },
   EN: {
     nav_services: "Services",
     nav_about: "About Us",
     nav_contact: "Contact",
     
-    hero_title: "Your Reliable Partner for House & Yard",
+    hero_title: "Your Reliable Partner for House & Yard Service",
     hero_subtitle: "Professional building cleaning & property maintenance based in Adendorf. Thorough, flexible, and customer-focused.",
     hero_location: "Based in Adendorf",
     hero_cta_call: "CALL NOW",
@@ -190,6 +194,8 @@ export const translations: Record<'DE' | 'EN', TranslationSet> = {
     qr_label: "Digital Business Card",
     qr_scan_prompt: "Scan QR code to quickly save our complete contact info directly onto your phone",
     copyright: "© 2026 JC HAUS & HOF SERVICE. All rights reserved.",
-    legal_notice: "Legal Notice & Privacy Policy"
+    legal_notice: "Legal Notice & Privacy Policy",
+    tax_number_label: "Tax Number",
+    commercial_register_label: "Commercial Register"
   }
 };

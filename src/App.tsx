@@ -37,6 +37,8 @@ import houseCareImg from './assets/images/house_care_1781291501073.jpg';
 import heroHouseImg from './assets/images/hero_house_1781291514375.jpg';
 import householdHelpImg from './assets/images/household_help_1781291551777.jpg';
 import handymanImg from './assets/images/handyman_tools_belt_1781610428027.jpg';
+import minorRepairsImg from './assets/images/minor_repairs_aesthetic_1782419220448.jpg';
+import groceryHelpImg from './assets/images/grocery_help_aesthetic_1782419910270.jpg';
 import contactQrImg from './assets/images/contact_qr.svg';
 
 export default function App() {
@@ -142,11 +144,12 @@ export default function App() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
-                  <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#f2d680" />
-                    <stop offset="40%" stopColor="#dca842" />
-                    <stop offset="70%" stopColor="#bf8e29" />
-                    <stop offset="100%" stopColor="#fcedaa" />
+                  <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="80%">
+                    <stop offset="0%" stopColor="#FFF1B8" />
+                    <stop offset="25%" stopColor="#DFB351" />
+                    <stop offset="60%" stopColor="#9C7420" />
+                    <stop offset="85%" stopColor="#E6C16B" />
+                    <stop offset="100%" stopColor="#C59C3F" />
                   </linearGradient>
                 </defs>
                 
@@ -154,27 +157,27 @@ export default function App() {
                 <path 
                   d="M 16 55 L 48 23 L 68 43" 
                   stroke="url(#gold-gradient)" 
-                  strokeWidth="5" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
+                  strokeWidth="6" 
+                  strokeLinecap="butt" 
+                  strokeLinejoin="miter" 
                 />
 
                 {/* Roof Peak 2: Right & Medium */}
                 <path 
                   d="M 50 43 L 70 27 L 90 43" 
                   stroke="url(#gold-gradient)" 
-                  strokeWidth="5" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
+                  strokeWidth="6" 
+                  strokeLinecap="butt" 
+                  strokeLinejoin="miter" 
                 />
 
                 {/* Roof Peak 3: Nested Center / Bottom */}
                 <path 
                   d="M 34 50 L 48 36 L 62 50" 
                   stroke="url(#gold-gradient)" 
-                  strokeWidth="5" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
+                  strokeWidth="6" 
+                  strokeLinecap="butt" 
+                  strokeLinejoin="miter" 
                 />
               </svg>
             </div>
@@ -808,7 +811,7 @@ export default function App() {
                 <div>
                   <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-50 dark:bg-slate-950 border-b border-slate-100 dark:border-slate-850">
                     <img 
-                      src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=600&q=80" 
+                      src={minorRepairsImg} 
                       alt={lang === 'DE' ? 'Kleinreparaturen' : 'Minor Repairs'} 
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                       referrerPolicy="no-referrer"
@@ -856,7 +859,7 @@ export default function App() {
                 <div>
                   <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-50 dark:bg-slate-950 border-b border-slate-100 dark:border-slate-850">
                     <img 
-                      src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80" 
+                      src={groceryHelpImg} 
                       alt={lang === 'DE' ? 'Einkaufshilfe' : 'Grocery Shopping Help'} 
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                       referrerPolicy="no-referrer"
@@ -1197,6 +1200,10 @@ export default function App() {
                         21365 Adendorf<br />
                         Deutschland / Germany
                       </p>
+                      <div className="pt-2 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-0.5">
+                        <p><span className="font-bold text-slate-700 dark:text-slate-350">{t.tax_number_label}:</span> 33/232/10702</p>
+                        <p><span className="font-bold text-slate-700 dark:text-slate-350">{t.commercial_register_label}:</span> HRB 213184</p>
+                      </div>
                     </div>
 
                     <div className="space-y-2">
