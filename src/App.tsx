@@ -25,7 +25,9 @@ import {
   ShieldCheck,
   Award,
   Sun,
-  Moon
+  Moon,
+  Facebook,
+  Users
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { translations } from './translations';
@@ -40,6 +42,8 @@ import handymanImg from './assets/images/handyman_tools_belt_1781610428027.jpg';
 import minorRepairsImg from './assets/images/minor_repairs_aesthetic_1782419220448.jpg';
 import groceryHelpImg from './assets/images/grocery_help_aesthetic_1782419910270.jpg';
 import contactQrImg from './assets/images/contact_qr.svg';
+import managerImg from './assets/images/business_manager_portrait_1782582612173.jpg';
+import teamImg from './assets/images/service_team_photo_1782583038688.jpg';
 
 export default function App() {
   const [lang, setLang] = useState<'DE' | 'EN'>(() => {
@@ -526,10 +530,9 @@ export default function App() {
             <p className="text-[11px] font-mono font-bold tracking-[0.25em] text-slate-400 uppercase text-center mb-8">
               {lang === 'DE' ? 'UNSERE LEISTUNGEN IM ÜBERBLICK' : 'OUR RANGE OF SERVICES'}
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 sm:gap-6 justify-center items-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 sm:gap-6 justify-center items-center">
               {[
                 { labelDe: 'Reinigungsservice', labelEn: 'Cleaning Service', icon: Sparkles },
-                { labelDe: 'Haushaltshilfe', labelEn: 'Household Help', icon: HeartHandshake },
                 { labelDe: 'Urlaubsbetreuung', labelEn: 'Home Care', icon: Home },
                 { labelDe: 'Gartenpflege', labelEn: 'Garden Help', icon: Sprout },
                 { labelDe: 'Hausmeister', labelEn: 'Janitorial Service', icon: Wrench },
@@ -594,8 +597,8 @@ export default function App() {
             </AnimatePresence>
           </div>
 
-          {/* Core Services 2x2 Grid Layout */}
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+          {/* Core Services 3-Column Grid Layout */}
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
             
             {/* Card 1: Reinigungsservice */}
             <motion.div 
@@ -617,7 +620,7 @@ export default function App() {
                 
                 <div className="p-8">
                   <AnimatePresence mode="wait">
-                    <motion.h3 
+                     <motion.h3 
                       key={`s1-t-${lang}`}
                       className="font-display font-bold text-xl sm:text-2xl text-slate-900 dark:text-white mb-3"
                     >
@@ -636,46 +639,7 @@ export default function App() {
               </div>
             </motion.div>
 
-            {/* Card 2: Haushaltshilfe */}
-            <motion.div 
-              whileHover={{ y: -6, boxShadow: "0 20px 25px -5px rgba(0,0,0,0.06), 0 10px 10px -5px rgba(0,0,0,0.04)" }}
-              className="bg-white dark:bg-slate-900 p-0 overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm transition-all duration-300 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-50 dark:bg-slate-950 border-b border-slate-100 dark:border-slate-850">
-                  <img 
-                    src={householdHelpImg} 
-                    alt="Haushaltshilfe" 
-                    className="w-full h-full object-cover transform group-hover:scale-103 transition-transform duration-500"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md flex items-center justify-center text-blue-700 dark:text-amber-400 shadow-xs">
-                    <HeartHandshake className="w-6 h-6 stroke-[2]" />
-                  </div>
-                </div>
-                
-                <div className="p-8">
-                  <AnimatePresence mode="wait">
-                    <motion.h3 
-                      key={`s2-t-${lang}`}
-                      className="font-display font-bold text-xl sm:text-2xl text-slate-900 dark:text-white mb-3"
-                    >
-                      {t.service2_title}
-                    </motion.h3>
-                  </AnimatePresence>
-                  <AnimatePresence mode="wait">
-                    <motion.p 
-                      key={`s2-d-${lang}`}
-                      className="text-slate-600 dark:text-slate-405 text-sm leading-relaxed"
-                    >
-                      {t.service2_desc}
-                    </motion.p>
-                  </AnimatePresence>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Card 3: Hausbetreuung im Urlaub */}
+            {/* Card 2: Hausbetreuung im Urlaub */}
             <motion.div 
               whileHover={{ y: -6, boxShadow: "0 20px 25px -5px rgba(0,0,0,0.06), 0 10px 10px -5px rgba(0,0,0,0.04)" }}
               className="bg-white dark:bg-slate-900 p-0 overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm transition-all duration-300 flex flex-col justify-between group"
@@ -714,7 +678,7 @@ export default function App() {
               </div>
             </motion.div>
 
-            {/* Card 4: Grünanlagenpflege und Gartenhilfe */}
+            {/* Card 3: Grünanlagenpflege und Gartenhilfe */}
             <motion.div 
               whileHover={{ y: -6, boxShadow: "0 20px 25px -5px rgba(0,0,0,0.06), 0 10px 10px -5px rgba(0,0,0,0.04)" }}
               className="bg-white dark:bg-slate-900 p-0 overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm transition-all duration-300 flex flex-col justify-between group"
@@ -917,7 +881,7 @@ export default function App() {
                     {lang === 'DE' ? 'Schnell & Lokal vor Ort' : 'Fast & Local Service'}
                   </h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400">
-                    {lang === 'DE' ? 'Wir betreuen vor allem Adendorf, Lüneburg und nahe Umlinge.' : 'We serve Adendorf, Lüneburg, and nearby areas.'}
+                    {lang === 'DE' ? 'Wir betreuen vor allem Adendorf, Lüneburg, nahe Umlinge und Umgebung.' : 'We serve Adendorf, Lüneburg, nearby areas, and surrounding areas.'}
                   </p>
                 </div>
               </div>
@@ -1014,13 +978,17 @@ export default function App() {
               {/* Bold easy to read Contact details */}
               <div className="grid sm:grid-cols-2 gap-6 pt-2">
                 
-                {/* Phone Card (Tap to Call Link) */}
+                {/* WhatsApp Card (Chat Link) */}
                 <a 
-                  href="tel:017643418716" 
+                  href="https://wa.me/4917643418716" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 hover:border-amber-400/50 shadow-sm transition-all group flex items-start space-x-4"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-amber-400 flex items-center justify-center text-slate-950 shrink-0 group-hover:scale-110 transition-transform">
-                    <Phone className="w-5 h-5 stroke-[2.5]" />
+                  <div className="w-10 h-10 rounded-lg bg-[#25D366] flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.706 1.458h.008c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
                   </div>
                   <div className="space-y-1">
                     <span className="block text-xs uppercase tracking-wider text-slate-400 font-mono">
@@ -1093,12 +1061,34 @@ export default function App() {
                   </div>
                 </div>
 
+                {/* Facebook Card (Follow Link) */}
+                <a 
+                  href="https://web.facebook.com/profile.php?id=61588120566248" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="sm:col-span-2 bg-slate-950/60 p-5 rounded-2xl border border-slate-800 hover:border-amber-400/50 shadow-sm transition-all group flex items-center justify-between"
+                >
+                  <div className="flex items-center space-x-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#1877F2] flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform">
+                      <Facebook className="w-5 h-5 fill-current" />
+                    </div>
+                    <div className="space-y-0.5">
+                      <span className="block text-xs uppercase tracking-wider text-slate-400 font-mono">
+                        Facebook
+                      </span>
+                      <span className="block text-base font-bold text-white group-hover:text-amber-400 transition-colors">
+                        {t.facebook_follow}
+                      </span>
+                    </div>
+                  </div>
+                </a>
+
               </div>
 
             </div>
 
-            {/* Right side: QR Code Box Component (5 Columns) */}
-            <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-end">
+            {/* Right side: QR Code Box Component & Business Manager Profile (5 Columns) */}
+            <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-end space-y-6">
               <div className="bg-slate-950 p-6 sm:p-8 rounded-2xl border border-slate-800/80 shadow-inner w-full max-w-[340px] flex flex-col items-center space-y-4">
                 
                 {/* Bordered Placeholder box with actual rendered Vector QR design */}
@@ -1124,6 +1114,66 @@ export default function App() {
                 </div>
 
               </div>
+
+              {/* Business Manager Profile Card */}
+              <div className="bg-slate-950 p-5 rounded-2xl border border-slate-800/80 shadow-inner w-full max-w-[340px] flex flex-col items-center space-y-4">
+                <div className="relative w-full aspect-square max-w-[180px] overflow-hidden rounded-xl border-2 border-amber-400 shadow-md bg-slate-900 group">
+                  <img 
+                    src={managerImg} 
+                    alt="Jamil Said Kado - Inhaber" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="text-center w-full">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-amber-400 block mb-1">
+                    {lang === 'DE' ? 'Inhaber / Geschäftsführer' : 'Owner / Managing Director'}
+                  </span>
+                  <h4 className="font-display font-bold text-base text-white">
+                    Jamil Said Kado
+                  </h4>
+                  <p className="text-[11px] text-slate-400 mt-1 font-medium">
+                    JC HAUS & HOF SERVICE
+                  </p>
+
+                  <div className="border-t border-slate-800/80 my-4 w-full"></div>
+
+                  <div className="text-left">
+                    <h5 className="font-display font-bold text-xs text-amber-400 uppercase tracking-wider mb-2">
+                      {lang === 'DE' ? 'Über mich' : 'About Me'}
+                    </h5>
+                    <div className="text-[11px] text-slate-300 leading-relaxed space-y-3 font-normal">
+                      {lang === 'DE' ? (
+                        <>
+                          <p>
+                            Mein Name ist Jamil. Ich lebe mit meiner Familie in Adendorf, bin verheiratet und Vater von drei Kindern. Ehrlichkeit, Zuverlässigkeit und Fleiß sind Werte, die mich sowohl privat als auch beruflich auszeichnen.
+                          </p>
+                          <p>
+                            Mit meinem Unternehmen Hof &amp; Haus Service unterstütze ich meine Kundinnen und Kunden bei allen Arbeiten rund um Haus, Hof und Garten. Saubere Arbeit, Pünktlichkeit und zufriedene Kunden stehen für mich an erster Stelle.
+                          </p>
+                          <p>
+                            Ich freue mich darauf, Sie persönlich kennenzulernen und Ihnen mit meinem Service zur Seite zu stehen. Wenn Sie Unterstützung benötigen oder Fragen haben, kontaktieren Sie mich gerne - ich freue mich auf Ihren Anruf!
+                          </p>
+                        </>
+                      ) : (
+                        <>
+                          <p>
+                            My name is Jamil. I live with my family in Adendorf, am married and a father of three children. Honesty, reliability, and diligence are values that characterize me both personally and professionally.
+                          </p>
+                          <p>
+                            With my company Hof &amp; Haus Service, I support my clients with all tasks around the house, yard, and garden. Clean work, punctuality, and satisfied clients are my top priorities.
+                          </p>
+                          <p>
+                            I look forward to meeting you in person and assisting you with my services. If you need support or have any questions, please feel free to contact me - I look forward to your call!
+                          </p>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
             </div>
 
           </div>
@@ -1196,7 +1246,7 @@ export default function App() {
                       <span className="block font-bold text-slate-900 dark:text-white">Anbieter / Operator:</span>
                       <p className="font-medium text-slate-700 dark:text-slate-300">
                         JC HAUS & HOF SERVICE<br />
-                        Inhaber: J. C. <br />
+                        Inhaber: Jamil Said Kado<br />
                         21365 Adendorf<br />
                         Deutschland / Germany
                       </p>
@@ -1207,11 +1257,7 @@ export default function App() {
                     </div>
 
                     <div className="space-y-2">
-                      <span className="block font-bold text-slate-900 dark:text-white">Kontakt / Contact Details:</span>
-                      <p className="font-medium text-slate-700 dark:text-slate-300">
-                        Telefon: 0176/43418716<br />
-                        E-Mail: JC.Hausservice@gmx.net
-                      </p>
+                      {/* Left blank or removed per request */}
                     </div>
                   </div>
 
@@ -1259,6 +1305,15 @@ export default function App() {
                       {lang === 'DE'
                         ? 'Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Kontaktieren Sie uns hierzu einfach per E-Mail an JC.Hausservice@gmx.net.'
                         : 'You have the right at all times to request free information regarding the origin, recipients, and purpose of your stored personal data. You also retain the right to request correct or complete deletion of this data. Simply message us at JC.Hausservice@gmx.net.'}
+                    </p>
+
+                    <p className="mt-4">
+                      <strong className="text-slate-905 dark:text-white">4. Bildnachweise & KI-Generierung / Image Credits & AI Generation</strong>
+                    </p>
+                    <p className="text-xs sm:text-sm text-slate-650 dark:text-slate-300">
+                      {lang === 'DE'
+                        ? 'Alle auf dieser Website verwendeten Bilder wurden mittels künstlicher Intelligenz (KI) generiert. Es bestehen keine Urheberrechtsverletzungen dritter Parteien, und die Nutzungsrechte an diesen eigens für uns erstellten Bildern liegen vollumfänglich bei uns.'
+                        : 'All images used on this website are custom AI-generated. There is no third-party copyright infringement, and all rights to these uniquely generated images belong to us.'}
                     </p>
                   </div>
                 </div>

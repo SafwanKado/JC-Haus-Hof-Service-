@@ -63,6 +63,9 @@ export interface TranslationSet {
   legal_notice: string;
   tax_number_label: string;
   commercial_register_label: string;
+  facebook_follow: string;
+  team_label: string;
+  team_title: string;
 }
 
 export const translations: Record<'DE' | 'EN', TranslationSet> = {
@@ -120,7 +123,7 @@ export const translations: Record<'DE' | 'EN', TranslationSet> = {
     contact_title: "Kontaktieren Sie uns",
     contact_subtitle: "Haben Sie Fragen oder wünschen Sie ein kostenloses, unverbindliches Angebot?",
     contact_info_head: "Inhaber: JC HAUS & HOF SERVICE",
-    phone_label: "Telefon",
+    phone_label: "WhatsApp / Mobil",
     email_label: "E-Mail",
     location_label: "Hauptstandort",
     hours_label: "Erreichbarkeit",
@@ -130,7 +133,10 @@ export const translations: Record<'DE' | 'EN', TranslationSet> = {
     copyright: "© 2026 JC HAUS & HOF SERVICE. Alle Rechte vorbehalten.",
     legal_notice: "Impressum & Datenschutz",
     tax_number_label: "Steuernummer",
-    commercial_register_label: "Handelsregister"
+    commercial_register_label: "Handelsregister",
+    facebook_follow: "Folgen Sie uns auf Facebook",
+    team_label: "Unser Team",
+    team_title: "Gemeinsam für Sie im Einsatz"
   },
   EN: {
     nav_services: "Services",
@@ -186,7 +192,7 @@ export const translations: Record<'DE' | 'EN', TranslationSet> = {
     contact_title: "Get in Touch",
     contact_subtitle: "Have a question or want to request a free, fully customized, non-binding quote?",
     contact_info_head: "Proprietorship: JC HAUS & HOF SERVICE",
-    phone_label: "Phone",
+    phone_label: "WhatsApp / Mobile",
     email_label: "Email",
     location_label: "Main Location",
     hours_label: "Service Hours",
@@ -196,6 +202,9 @@ export const translations: Record<'DE' | 'EN', TranslationSet> = {
     copyright: "© 2026 JC HAUS & HOF SERVICE. All rights reserved.",
     legal_notice: "Legal Notice & Privacy Policy",
     tax_number_label: "Tax Number",
-    commercial_register_label: "Commercial Register"
+    commercial_register_label: "Commercial Register",
+    facebook_follow: "Follow us on Facebook",
+    team_label: "Our Team",
+    team_title: "At Your Service Together"
   }
 };
