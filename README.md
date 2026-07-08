@@ -7,7 +7,7 @@ User-friendly design: Mobile‑ready layout with intuitive navigation.
 
 Scalable backend: Structured to support future integrations and updates.
 
-This repository contains the source code and assets for maintaining and improving the website.
+This repository contains the source code and assets for maintaining and improving the website. Built with Typescript, CSS, HTML
 **Prerequisites:**  Node.js
 
 1. Install dependencies:
